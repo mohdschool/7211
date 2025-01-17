@@ -101,14 +101,14 @@
             font-size: 22px;
         }
 
-        /* أزرار الفترات */
-        .buttons {
+        /* أزرار الأيام والفترات */
+        .days-buttons, .periods-buttons {
             margin: 20px 0;
             position: relative;
             z-index: 10;
         }
 
-        .buttons button {
+        .days-buttons button, .periods-buttons button {
             background-color: #004080;
             color: white;
             border: none;
@@ -120,14 +120,16 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
             position: relative;
             overflow: hidden;
+            margin: 5px;
         }
 
-        .buttons button:hover, .buttons button.active {
+        .days-buttons button:hover, .days-buttons button.active,
+        .periods-buttons button:hover, .periods-buttons button.active {
             background-color: #0066cc;
             transform: scale(1.1);
         }
 
-        .buttons button:after {
+        .days-buttons button:after, .periods-buttons button:after {
             content: '';
             position: absolute;
             top: 50%;
@@ -140,7 +142,7 @@
             transition: transform 0.5s ease;
         }
 
-        .buttons button:active:after {
+        .days-buttons button:active:after, .periods-buttons button:active:after {
             transform: translate(-50%, -50%) scale(1);
         }
 
@@ -257,7 +259,6 @@
 
         /* تحسين التجاوب */
         @media (max-width: 768px) {
-            /* التاريخ والساعة */
             .datetime {
                 font-size: 16px;
             }
@@ -266,7 +267,6 @@
                 padding: 5px;
             }
 
-            /* الرأس والشعار */
             header img {
                 width: 60px;
             }
@@ -275,25 +275,21 @@
                 font-size: 18px;
             }
 
-            /* أزرار الفترات */
-            .buttons button {
+            .days-buttons button, .periods-buttons button {
                 font-size: 16px;
                 padding: 8px 16px;
             }
 
-            /* جدول الامتحانات */
             .exam-table th, .exam-table td {
                 font-size: 14px;
                 padding: 8px;
             }
 
-            /* العبارات التحفيزية */
             #dynamic-message {
                 font-size: 14px;
                 bottom: 100px;
             }
 
-            /* شريط التمرير */
             .marquee {
                 font-size: 14px;
                 bottom: 40px;
@@ -301,7 +297,6 @@
         }
 
         @media (max-width: 480px) {
-            /* التاريخ والساعة */
             .datetime {
                 font-size: 14px;
             }
@@ -310,7 +305,6 @@
                 padding: 3px;
             }
 
-            /* الرأس والشعار */
             header img {
                 width: 50px;
             }
@@ -319,25 +313,21 @@
                 font-size: 16px;
             }
 
-            /* أزرار الفترات */
-            .buttons button {
+            .days-buttons button, .periods-buttons button {
                 font-size: 14px;
                 padding: 6px 12px;
             }
 
-            /* جدول الامتحانات */
             .exam-table th, .exam-table td {
                 font-size: 12px;
                 padding: 6px;
             }
 
-            /* العبارات التحفيزية */
             #dynamic-message {
                 font-size: 12px;
                 bottom: 80px;
             }
 
-            /* شريط التمرير */
             .marquee {
                 font-size: 12px;
                 bottom: 30px;
@@ -358,19 +348,99 @@
     <!-- الرأس -->
     <header>
         <img src="https://e.top4top.io/p_3302it4a31.jpg" alt="شعار المدرسة">
-        <h1>جدول امتحانات الفصل الدراسي الأول - يوم الأحد 19 يناير</h1>
+        <h1>جدول امتحانات الفصل الدراسي الأول</h1>
     </header>
 
-    <!-- أزرار الفترات -->
-    <div class="buttons">
+    <!-- أزرار الأيام -->
+    <div class="days-buttons">
+        <button id="btnSunday" class="active">الأحد</button>
+        <button id="btnMonday">الإثنين</button>
+        <button id="btnTuesday">الثلاثاء</button>
+        <button id="btnWednesday">الأربعاء</button>
+    </div>
+
+    <!-- أزرار الفترات (فقط ليوم الأحد) -->
+    <div class="periods-buttons" id="periodsButtons" style="display: none;">
         <button id="btnPeriod1" class="active">الفترة الأولى</button>
         <button id="btnPeriod2">الفترة الثانية</button>
     </div>
 
     <!-- المحتوى -->
     <div class="content">
-        <!-- الفترة الأولى -->
-        <div id="period1">
+        <!-- الأحد -->
+        <div id="sunday">
+            <div id="period1">
+                <h2>الفترة الأولى</h2>
+                <table class="exam-table">
+                    <thead>
+                        <tr>
+                            <th>الصف</th>
+                            <th>المادة</th>
+                            <th>الوقت</th>
+                            <th>المدة</th>
+                            <th>العد التنازلي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>الصفوف الخامس إلى الثامن</td>
+                            <td>العلوم</td>
+                            <td>8:00 ص - 9:30 ص</td>
+                            <td>ساعة ونصف</td>
+                            <td class="countdown" id="countdown1">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                        </tr>
+                        <tr>
+                            <td>الصف التاسع</td>
+                            <td>الدراسات الاجتماعية</td>
+                            <td>8:00 ص - 9:30 ص</td>
+                            <td>ساعة ونصف</td>
+                            <td class="countdown" id="countdown2">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                        </tr>
+                        <tr>
+                            <td>الصف العاشر</td>
+                            <td>اللغة الإنجليزية</td>
+                            <td>8:00 ص - 10:30 ص</td>
+                            <td>ساعتان ونصف</td>
+                            <td class="countdown" id="countdown3">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="period2" style="display: none;">
+                <h2>الفترة الثانية</h2>
+                <table class="exam-table">
+                    <thead>
+                        <tr>
+                            <th>الصف</th>
+                            <th>المادة</th>
+                            <th>الوقت</th>
+                            <th>المدة</th>
+                            <th>العد التنازلي</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>الصف التاسع</td>
+                            <td>اللغة الإنجليزية</td>
+                            <td>10:00 ص - 12:00 م</td>
+                            <td>ساعتان</td>
+                            <td class="countdown" id="countdown4">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                        </tr>
+                        <tr>
+                            <td>الصف العاشر</td>
+                            <td>الدراسات الاجتماعية</td>
+                            <td>10:00 ص - 12:00 م</td>
+                            <td>ساعتان</td>
+                            <td class="countdown" id="countdown5">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- الإثنين -->
+        <div id="monday" style="display: none;">
             <h2>الفترة الأولى</h2>
             <table class="exam-table">
                 <thead>
@@ -385,32 +455,71 @@
                 <tbody>
                     <tr>
                         <td>الصفوف الخامس إلى الثامن</td>
-                        <td>العلوم</td>
-                        <td>8:00 ص - 9:30 ص</td>
-                        <td>ساعة ونصف</td>
-                        <td class="countdown" id="countdown1">سيبدأ العد التنازلي عند بدء الاختبار</td>
-                    </tr>
-                    <tr>
-                        <td>الصف التاسع</td>
                         <td>الدراسات الاجتماعية</td>
                         <td>8:00 ص - 9:30 ص</td>
                         <td>ساعة ونصف</td>
-                        <td class="countdown" id="countdown2">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                        <td class="countdown" id="countdown6">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                    </tr>
+                    <tr>
+                        <td>الصف التاسع</td>
+                        <td>الرياضيات</td>
+                        <td>8:00 ص - 9:30 ص</td>
+                        <td>ساعة ونصف</td>
+                        <td class="countdown" id="countdown7">سيبدأ العد التنازلي عند بدء الاختبار</td>
                     </tr>
                     <tr>
                         <td>الصف العاشر</td>
-                        <td>اللغة الإنجليزية</td>
+                        <td>الرياضيات</td>
                         <td>8:00 ص - 10:30 ص</td>
                         <td>ساعتان ونصف</td>
-                        <td class="countdown" id="countdown3">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                        <td class="countdown" id="countdown8">سيبدأ العد التنازلي عند بدء الاختبار</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- الفترة الثانية -->
-        <div id="period2" style="display: none;">
-            <h2>الفترة الثانية</h2>
+        <!-- الثلاثاء -->
+        <div id="tuesday" style="display: none;">
+            <h2>الفترة الأولى</h2>
+            <table class="exam-table">
+                <thead>
+                    <tr>
+                        <th>الصف</th>
+                        <th>المادة</th>
+                        <th>الوقت</th>
+                        <th>المدة</th>
+                        <th>العد التنازلي</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>الصفوف الخامس إلى الثامن</td>
+                        <td>اللغة العربية</td>
+                        <td>8:00 ص - 10:00 ص</td>
+                        <td>ساعتان</td>
+                        <td class="countdown" id="countdown9">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                    </tr>
+                    <tr>
+                        <td>الصف التاسع</td>
+                        <td>الفيزياء</td>
+                        <td>8:00 ص - 9:30 ص</td>
+                        <td>ساعة ونصف</td>
+                        <td class="countdown" id="countdown10">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                    </tr>
+                    <tr>
+                        <td>الصف العاشر</td>
+                        <td>الفيزياء</td>
+                        <td>8:00 ص - 10:00 ص</td>
+                        <td>ساعتان</td>
+                        <td class="countdown" id="countdown11">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- الأربعاء -->
+        <div id="wednesday" style="display: none;">
+            <h2>الفترة الأولى</h2>
             <table class="exam-table">
                 <thead>
                     <tr>
@@ -424,17 +533,17 @@
                 <tbody>
                     <tr>
                         <td>الصف التاسع</td>
-                        <td>اللغة الإنجليزية</td>
-                        <td>10:00 ص - 12:00 م</td>
-                        <td>ساعتان</td>
-                        <td class="countdown" id="countdown4">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                        <td>الأحياء</td>
+                        <td>8:00 ص - 9:30 ص</td>
+                        <td>ساعة ونصف</td>
+                        <td class="countdown" id="countdown12">سيبدأ العد التنازلي عند بدء الاختبار</td>
                     </tr>
                     <tr>
                         <td>الصف العاشر</td>
-                        <td>الدراسات الاجتماعية</td>
-                        <td>10:00 ص - 12:00 م</td>
+                        <td>الأحياء</td>
+                        <td>8:00 ص - 10:00 ص</td>
                         <td>ساعتان</td>
-                        <td class="countdown" id="countdown5">سيبدأ العد التنازلي عند بدء الاختبار</td>
+                        <td class="countdown" id="countdown13">سيبدأ العد التنازلي عند بدء الاختبار</td>
                     </tr>
                 </tbody>
             </table>
@@ -534,29 +643,57 @@
             { id: "countdown2", start: "2025-01-19T08:00:00", end: "2025-01-19T09:30:00" },
             { id: "countdown3", start: "2025-01-19T08:00:00", end: "2025-01-19T10:30:00" },
             { id: "countdown4", start: "2025-01-19T10:00:00", end: "2025-01-19T12:00:00" },
-            { id: "countdown5", start: "2025-01-19T10:00:00", end: "2025-01-19T12:00:00" }
+            { id: "countdown5", start: "2025-01-19T10:00:00", end: "2025-01-19T12:00:00" },
+            { id: "countdown6", start: "2025-01-20T08:00:00", end: "2025-01-20T09:30:00" },
+            { id: "countdown7", start: "2025-01-20T08:00:00", end: "2025-01-20T09:30:00" },
+            { id: "countdown8", start: "2025-01-20T08:00:00", end: "2025-01-20T10:30:00" },
+            { id: "countdown9", start: "2025-01-21T08:00:00", end: "2025-01-21T10:00:00" },
+            { id: "countdown10", start: "2025-01-21T08:00:00", end: "2025-01-21T09:30:00" },
+            { id: "countdown11", start: "2025-01-21T08:00:00", end: "2025-01-21T10:00:00" },
+            { id: "countdown12", start: "2025-01-22T08:00:00", end: "2025-01-22T09:30:00" },
+            { id: "countdown13", start: "2025-01-22T08:00:00", end: "2025-01-22T10:00:00" }
         ];
 
         examTimes.forEach(({ id, start, end }) => {
             startCountdownWithEffect(id, start, end);
         });
 
-        // التبديل بين الفترات
+        // التبديل بين الأيام
+        const daysButtons = document.querySelectorAll('.days-buttons button');
+        const daysContent = document.querySelectorAll('.content > div');
+        const periodsButtons = document.getElementById("periodsButtons");
+
+        daysButtons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                daysContent.forEach(content => content.style.display = "none");
+                daysContent[index].style.display = "block";
+                daysButtons.forEach(btn => btn.classList.remove("active"));
+                button.classList.add("active");
+
+                // إظهار أزرار الفترات فقط ليوم الأحد
+                if (button.id === "btnSunday") {
+                    periodsButtons.style.display = "block";
+                } else {
+                    periodsButtons.style.display = "none";
+                }
+            });
+        });
+
+        // التبديل بين الفترات (فقط ليوم الأحد)
         const btnPeriod1 = document.getElementById("btnPeriod1");
         const btnPeriod2 = document.getElementById("btnPeriod2");
-        const period1 = document.getElementById("period1");
-        const period2 = document.getElementById("period2");
+        const periodsContent = document.querySelectorAll('#sunday > div');
 
         btnPeriod1.addEventListener("click", () => {
-            period1.style.display = "block";
-            period2.style.display = "none";
+            periodsContent.forEach(content => content.style.display = "none");
+            document.querySelector('#sunday > #period1').style.display = "block";
             btnPeriod1.classList.add("active");
             btnPeriod2.classList.remove("active");
         });
 
         btnPeriod2.addEventListener("click", () => {
-            period1.style.display = "none";
-            period2.style.display = "block";
+            periodsContent.forEach(content => content.style.display = "none");
+            document.querySelector('#sunday > #period2').style.display = "block";
             btnPeriod2.classList.add("active");
             btnPeriod1.classList.remove("active");
         });
