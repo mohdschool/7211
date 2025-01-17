@@ -52,19 +52,26 @@
         .datetime {
             position: fixed;
             top: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+
+        .clock, .date {
             font-size: 24px;
             color: white;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            z-index: 10;
-        }
-
-        .date {
-            right: 20px;
+            padding: 10px;
         }
 
         .clock {
             left: 20px;
+        }
+
+        .date {
+            right: 20px;
         }
 
         /* الرأس والشعار */
@@ -78,9 +85,9 @@
 
         header img {
             width: 80px;
-            border-radius: 50%; /* جعل الشعار دائريًا */
+            border-radius: 50%;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
-            animation: pulse 2s infinite; /* إضافة تأثير النبض */
+            animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
@@ -201,7 +208,7 @@
         /* العبارات التحفيزية */
         #dynamic-message {
             position: fixed;
-            bottom: 120px; /* زيادة المسافة من الأسفل */
+            bottom: 120px;
             left: 50%;
             transform: translateX(-50%);
             background: #004080;
@@ -213,7 +220,7 @@
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
             display: none;
             animation: fadeInOut 3s linear infinite;
-            z-index: 20; /* زيادة z-index */
+            z-index: 20;
         }
 
         @keyframes fadeInOut {
@@ -239,13 +246,13 @@
 
         .marquee p {
             display: inline-block;
-            animation: scroll-left 15s linear infinite; /* تفعيل الحركة */
+            animation: scroll-left 15s linear infinite;
             margin: 0;
         }
 
         @keyframes scroll-left {
-            0% { transform: translateX(100%); } /* يبدأ من اليمين */
-            100% { transform: translateX(-100%); } /* ينتهي عند اليسار */
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
         }
 
         /* تحسين التجاوب */
@@ -279,8 +286,10 @@
     <div class="stars" id="stars"></div>
 
     <!-- التاريخ والساعة -->
-    <div class="datetime clock" id="clock"></div>
-    <div class="datetime date" id="date"></div>
+    <div class="datetime">
+        <div class="clock" id="clock"></div>
+        <div class="date" id="date"></div>
+    </div>
 
     <!-- الرأس -->
     <header>
