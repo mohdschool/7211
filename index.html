@@ -259,37 +259,50 @@
 
         /* تحسين التجاوب */
         @media (max-width: 768px) {
+            /* التاريخ والساعة */
             .datetime {
-                font-size: 16px;
+                top: 5px; /* تقليل المسافة من الأعلى */
+                font-size: 14px; /* تقليل حجم الخط */
             }
 
             .clock, .date {
-                padding: 5px;
+                padding: 5px; /* تقليل الحشو */
+            }
+
+            /* الرأس والشعار */
+            header {
+                padding: 10px; /* تقليل الحشو */
+                margin-top: 40px; /* إضافة مسافة من الأعلى لتجنب التداخل */
             }
 
             header img {
-                width: 60px;
+                width: 60px; /* تقليل حجم الشعار */
             }
 
             header h1 {
-                font-size: 18px;
+                font-size: 16px; /* تقليل حجم العنوان */
+                margin-top: 5px; /* تقليل المسافة بين الشعار والعنوان */
             }
 
+            /* أزرار الفترات */
             .days-buttons button, .periods-buttons button {
                 font-size: 16px;
                 padding: 8px 16px;
             }
 
+            /* جدول الامتحانات */
             .exam-table th, .exam-table td {
                 font-size: 14px;
                 padding: 8px;
             }
 
+            /* العبارات التحفيزية */
             #dynamic-message {
                 font-size: 14px;
                 bottom: 100px;
             }
 
+            /* شريط التمرير */
             .marquee {
                 font-size: 14px;
                 bottom: 40px;
@@ -297,37 +310,50 @@
         }
 
         @media (max-width: 480px) {
+            /* التاريخ والساعة */
             .datetime {
-                font-size: 14px;
+                top: 3px; /* تقليل المسافة من الأعلى أكثر */
+                font-size: 12px; /* تقليل حجم الخط أكثر */
             }
 
             .clock, .date {
-                padding: 3px;
+                padding: 3px; /* تقليل الحشو أكثر */
+            }
+
+            /* الرأس والشعار */
+            header {
+                padding: 8px; /* تقليل الحشو أكثر */
+                margin-top: 30px; /* إضافة مسافة من الأعلى أكثر */
             }
 
             header img {
-                width: 50px;
+                width: 50px; /* تقليل حجم الشعار أكثر */
             }
 
             header h1 {
-                font-size: 16px;
+                font-size: 14px; /* تقليل حجم العنوان أكثر */
+                margin-top: 3px; /* تقليل المسافة بين الشعار والعنوان أكثر */
             }
 
+            /* أزرار الفترات */
             .days-buttons button, .periods-buttons button {
                 font-size: 14px;
                 padding: 6px 12px;
             }
 
+            /* جدول الامتحانات */
             .exam-table th, .exam-table td {
                 font-size: 12px;
                 padding: 6px;
             }
 
+            /* العبارات التحفيزية */
             #dynamic-message {
                 font-size: 12px;
                 bottom: 80px;
             }
 
+            /* شريط التمرير */
             .marquee {
                 font-size: 12px;
                 bottom: 30px;
