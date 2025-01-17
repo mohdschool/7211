@@ -257,26 +257,90 @@
 
         /* تحسين التجاوب */
         @media (max-width: 768px) {
+            /* التاريخ والساعة */
             .datetime {
                 font-size: 16px;
+            }
+
+            .clock, .date {
+                padding: 5px;
+            }
+
+            /* الرأس والشعار */
+            header img {
+                width: 60px;
             }
 
             header h1 {
                 font-size: 18px;
             }
 
-            .exam-table th, .exam-table td {
-                font-size: 14px;
-                padding: 8px;
-            }
-
+            /* أزرار الفترات */
             .buttons button {
                 font-size: 16px;
                 padding: 8px 16px;
             }
 
+            /* جدول الامتحانات */
+            .exam-table th, .exam-table td {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            /* العبارات التحفيزية */
             #dynamic-message {
                 font-size: 14px;
+                bottom: 100px;
+            }
+
+            /* شريط التمرير */
+            .marquee {
+                font-size: 14px;
+                bottom: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* التاريخ والساعة */
+            .datetime {
+                font-size: 14px;
+            }
+
+            .clock, .date {
+                padding: 3px;
+            }
+
+            /* الرأس والشعار */
+            header img {
+                width: 50px;
+            }
+
+            header h1 {
+                font-size: 16px;
+            }
+
+            /* أزرار الفترات */
+            .buttons button {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+
+            /* جدول الامتحانات */
+            .exam-table th, .exam-table td {
+                font-size: 12px;
+                padding: 6px;
+            }
+
+            /* العبارات التحفيزية */
+            #dynamic-message {
+                font-size: 12px;
+                bottom: 80px;
+            }
+
+            /* شريط التمرير */
+            .marquee {
+                font-size: 12px;
+                bottom: 30px;
             }
         }
     </style>
