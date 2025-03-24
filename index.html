@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>البرنامج الرقمي لجداول اختبار قصير 1 - الفصل الثاني 2024/2025</title>
     <style>
-    /* إعدادات عامة */
+          /* إعدادات عامة */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -391,10 +391,76 @@
             color: #666;
         }
 
+
+        /* زر العودة إلى المنصة */
+        .back-to-platform {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            z-index: 1000;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .back-to-platform a {
+            display: inline-block;
+            background-color: #004080;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(0, 64, 128, 0.4);
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .back-to-platform a:hover {
+            background-color: #0066cc;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 64, 128, 0.6);
+        }
+
+        .back-to-platform a i {
+            margin-left: 8px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* تعديلات للجوال */
+        @media (max-width: 768px) {
+            .back-to-platform {
+                bottom: 80px;
+                right: 15px;
+            }
+            
+            .back-to-platform a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .back-to-platform {
+                bottom: 70px;
+                right: 10px;
+            }
+            
+            .back-to-platform a {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+        }
     </style>
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- النجوم المتحركة -->
+  
     <div class="stars" id="stars"></div>
 
     <!-- التاريخ والساعة -->
@@ -418,7 +484,14 @@
         <button id="btnThursday">الخميس</button>
     </div>
 
-    <!-- المحتوى -->
+
+    <!-- زر العودة إلى المنصة -->
+    <div class="back-to-platform">
+        <a href="https://mohdschool.github.io/platform/" target="_blank">
+            <i class="fas fa-arrow-left"></i> العودة إلى المنصة
+        </a>
+    </div>
+ <!-- المحتوى -->
     <div class="content">
            <!-- الأحد -->
         <div id="sunday" style="display: none;">
@@ -1239,4 +1312,4 @@
         }, 100);
     </script>
 </body>
-</html>
+</html>  
