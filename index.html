@@ -341,7 +341,7 @@
             <div class="exam-details">
                 <div class="detail-box">
                     <div class="detail-label">التاريخ</div>
-                    <div class="detail-value" id="exam-date">٢٠٢٥/٦/١</div>
+                    <div class="detail-value" id="exam-date">٢٠٢٥/١٠/١٣</div>
                 </div>
                 
                 <div class="detail-box">
@@ -384,64 +384,59 @@
     </footer>
 
     <script>
-      // بيانات الامتحانات لكل صف
+        // بيانات الامتحانات لكل صف - محدثة بناءً على الجداول المقدمة
         const examData = {
             5: [
-                { date: "2025/6/1", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/2", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/3", subject: "الدراسات الاجتماعية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/4", subject: "اللغة العربية", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/10", subject: "اللغة الإنجليزية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/11", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
+                { date: "2025/10/13", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/14", subject: "اللغة العربية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/15", subject: "الدراسات الاجتماعية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/16", subject: "اللغة الإنجليزية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/19", subject: "التربية الإسلامية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/20", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
             ],
             6: [
-                // نفس بيانات الصف الخامس حسب الجدول
-                { date: "2025/6/1", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/2", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/3", subject: "الدراسات الاجتماعية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/4", subject: "اللغة العربية", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/10", subject: "اللغة الإنجليزية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/11", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
+                { date: "2025/10/12", subject: "التربية الإسلامية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/13", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/14", subject: "الدراسات الاجتماعية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/15", subject: "اللغة العربية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/16", subject: "اللغة الإنجليزية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/20", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
             ],
             7: [
-                { date: "2025/6/1", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/2", subject: "التربية الإسلامية", duration: "ساعتان ", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/3", subject: "الدراسات الاجتماعية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/4", subject: "اللغة العربية", duration: "ساعتان ", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/10", subject: "اللغة الإنجليزية", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/11", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
+                { date: "2025/10/13", subject: "اللغة الإنجليزية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/14", subject: "اللغة العربية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/15", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/16", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/19", subject: "التربية الإسلامية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
             ],
             8: [
-                // نفس بيانات الصف السابع حسب الجدول
-                { date: "2025/6/1", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "09:30" },
-                { date: "2025/6/2", subject: "التربية الإسلامية", duration: "ساعتان ", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/3", subject: "الدراسات الاجتماعية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/4", subject: "اللغة العربية", duration: "ساعتان ", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/10", subject: "اللغة الإنجليزية", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/11", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
+                { date: "2025/10/15", subject: "اللغة العربية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/16", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/20", subject: "اللغة الإنجليزية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/21", subject: "التربية الإسلامية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/22", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
             ],
             9: [
-                { date: "2025/6/1", subject: "الدراسات الاجتماعية", duration: "ساعة ونصف", startTime: "8:00", endTime: "09:30" },
-               { date: "2025/6/1", subject: "اللغة الإنجليزية ", duration: "ساعتان", startTime: "10:00", endTime: "12:00" },
-                { date: "2025/6/2", subject: "الكيمياء", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/3", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/4", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/10", subject: "الفيزياء", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
-                { date: "2025/6/11", subject: "اللغة العربية", duration: "ساعتان ", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/12", subject: "الأحياء", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
+                { date: "2025/10/13", subject: "الأحياء", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/14", subject: "اللغة الإنجليزية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/15", subject: "الدراسات الاجتماعية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/16", subject: "اللغة العربية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/19", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/20", subject: "التربية الإسلامية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/21", subject: "الفيزياء", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/22", subject: "الكيمياء", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
             ],
             10: [
-                { date: "2025/6/1", subject: "الدراسات الاجتماعية", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/1", subject: "اللغة الإنجليزية", duration: "ساعتان ونصف", startTime: "10:30", endTime: "01:00" },
-                { date: "2025/6/2", subject: "الكيمياء", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/3", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/4", subject: "الرياضيات", duration: "ساعتان ونصف", startTime: "8:00", endTime: "10:30" },
-                { date: "2025/6/10", subject: "الفيزياء", duration: "ساعتان", startTime: "8:00", endTime: "10:00" },
-                { date: "2025/6/11", subject: "اللغة العربية", duration: "ثلاث ساعات", startTime: "8:00", endTime: "11:00" },
-                { date: "2025/6/12", subject: "الأحياء", duration: "ساعتان", startTime: "8:00", endTime: "10:00" }
+                { date: "2025/10/13", subject: "الأحياء", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/14", subject: "التربية الإسلامية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/16", subject: "الفيزياء", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/19", subject: "الدراسات الاجتماعية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/20", subject: "اللغة العربية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/21", subject: "اللغة الإنجليزية", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/22", subject: "الكيمياء", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" },
+                { date: "2025/10/23", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30" }
             ]
         };
-
 
         function updateDateTime() {
             const now = new Date();
@@ -550,4 +545,3 @@
     </script>
 </body>
 </html>
-
