@@ -432,7 +432,7 @@
             <div class="exam-details">
                 <div class="detail-box">
                     <div class="detail-label">التاريخ</div>
-                    <div class="detail-value" id="exam-date">٢٠٢٥/١٠/١٣</div>
+                    <div class="detail-value" id="exam-date">٢٠٢٥/١٢/٩</div>
                 </div>
                 
                 <div class="detail-box">
@@ -491,54 +491,56 @@
         // بيانات الامتحانات لكل صف - محدثة بناءً على الجداول المقدمة
         const examData = {
             5: [
-                { date: "2025/10/13", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/10/14", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/10/15", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/10/16", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/10/19", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
-                { date: "2025/10/20", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" }
+                { date: "2025/12/2", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
+                { date: "2025/12/3", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
+                { date: "2025/12/4", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
+                { date: "2025/12/7", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
+                { date: "2025/12/8", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
+                { date: "2025/12/9", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" }
             ],
             6: [
-                { date: "2025/10/12", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
-                { date: "2025/10/13", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/10/14", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/10/15", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/10/16", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/10/20", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" }
+                { date: "2025/12/2", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
+                { date: "2025/12/3", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
+                { date: "2025/12/4", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
+                { date: "2025/12/7", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
+                { date: "2025/12/8", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
+                { date: "2025/12/9", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" }
             ],
             7: [
-                { date: "2025/10/13", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/10/14", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/10/15", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/10/16", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/10/19", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" }
+                { date: "2025/12/2", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
+                { date: "2025/12/3", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
+                { date: "2025/12/4", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
+                { date: "2025/12/7", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
+                { date: "2025/12/8", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
+                { date: "2025/12/9", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" }
             ],
             8: [
-                { date: "2025/10/15", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/10/16", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/10/20", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/10/21", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/10/22", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" }
+                { date: "2025/12/2", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
+                { date: "2025/12/3", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
+                { date: "2025/12/4", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
+                { date: "2025/12/8", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
+                { date: "2025/12/9", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
+                { date: "2025/12/10", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" }
             ],
             9: [
-                { date: "2025/10/13", subject: "الأحياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/10/14", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/10/15", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/10/16", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/10/19", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
-                { date: "2025/10/20", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/10/21", subject: "الفيزياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/10/22", subject: "الكيمياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" }
+                { date: "2025/12/2", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
+                { date: "2025/12/3", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
+                { date: "2025/12/4", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
+                { date: "2025/12/7", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
+                { date: "2025/12/8", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
+                { date: "2025/12/9", subject: "الكيمياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
+                { date: "2025/12/10", subject: "الفيزياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
+                { date: "2025/12/11", subject: "الأحياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" }
             ],
             10: [
-                { date: "2025/10/13", subject: "الأحياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/10/14", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/10/16", subject: "الفيزياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/10/19", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
-                { date: "2025/10/20", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/10/21", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/10/22", subject: "الكيمياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/10/23", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" }
+                { date: "2025/12/2", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
+                { date: "2025/12/3", subject: "الأحياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
+                { date: "2025/12/4", subject: "الفيزياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
+                { date: "2025/12/7", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
+                { date: "2025/12/8", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
+                { date: "2025/12/9", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
+                { date: "2025/12/10", subject: "الكيمياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
+                { date: "2025/12/11", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" }
             ]
         };
 
