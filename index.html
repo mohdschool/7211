@@ -461,7 +461,8 @@
             <div class="school-name">منصة تواصل</div>
         </div>
         
-        <div class="date-container">
+        <div class="time-container">
+            <div class="time" id="current-time">٠٨:٠٠:٠٠ ص</div>
             <div class="date-day">
                 <div class="day" id="current-day">السبت</div>
                 <div class="date" id="current-date">٢٥ مايو ٢٠٢٥</div>
@@ -505,6 +506,10 @@
             <div class="countdown-container">
                 <div class="countdown-title" id="countdown-title">الوقت المتبقي لبدء الاختبار</div>
                 <div class="countdown-timer">
+                    <div class="countdown-box">
+                        <div id="countdown-days">٠٠</div>
+                        <span class="countdown-label">أيام</span>
+                    </div>
                     <div class="countdown-box">
                         <div id="countdown-hours">٠٠</div>
                         <span class="countdown-label">ساعات</span>
@@ -686,7 +691,7 @@
             return date.toLocaleDateString('ar-EG');
         }
 
-        // بقية الوظائف كما هي
+        // تحديث الوقت والتاريخ
         function updateDateTime() {
             const now = new Date();
             const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
@@ -698,6 +703,7 @@
             document.getElementById('current-day').textContent = now.toLocaleDateString('ar-EG', dayOptions);
         }
         
+        // تحديث العد التنازلي
         function updateCountdown() {
             const now = new Date();
             const currentGrade = document.querySelector('.grade-btn.active').dataset.grade;
@@ -706,7 +712,8 @@
             let nextExam = null;
             let currentExam = null;
             
-            exams.forEach(exam => {
+            // البحث عن الامتحان الحالي أو القادم
+            for (let exam of exams) {
                 const examDate = new Date(exam.date);
                 const [startH, startM] = exam.startTime.split(':').map(Number);
                 const [endH, endM] = exam.endTime.split(':').map(Number);
@@ -717,10 +724,11 @@
                 
                 if (now >= examDate && now <= endTime) {
                     currentExam = exam;
+                    break;
                 } else if (now < examDate && (!nextExam || examDate < new Date(nextExam.date))) {
                     nextExam = exam;
                 }
-            });
+            }
             
             const examToShow = currentExam || nextExam;
             
@@ -728,17 +736,18 @@
                 document.getElementById('exam-subject').textContent = examToShow.subject;
                 document.getElementById('exam-date').textContent = new Date(examToShow.date).toLocaleDateString('ar-EG');
                 document.getElementById('exam-duration').textContent = examToShow.duration;
-                document.getElementById('exam-start').textContent = `٠${examToShow.startTime} ص`.replace('٠٠', '١٢');
+                document.getElementById('exam-start').textContent = examToShow.startTime + ' ص';
                 
-                const examDate = new Date(examToShow.date);
+                const examDateTime = new Date(examToShow.date);
                 const [startH, startM] = examToShow.startTime.split(':').map(Number);
-                examDate.setHours(startH, startM, 0, 0);
+                examDateTime.setHours(startH, startM, 0, 0);
                 
-                let timeDiff, isExamTime = false;
+                let timeDiff;
+                let isExamTime = false;
                 
                 if (currentExam) {
                     const [endH, endM] = currentExam.endTime.split(':').map(Number);
-                    const endTime = new Date(examDate);
+                    const endTime = new Date(examDateTime);
                     endTime.setHours(endH, endM, 0, 0);
                     
                     timeDiff = endTime - now;
@@ -746,23 +755,30 @@
                     document.getElementById('countdown-title').textContent = "الوقت المتبقي لانتهاء الاختبار";
                     document.querySelector('.exam-card').classList.add('exam-in-progress');
                 } else {
-                    timeDiff = examDate - now;
+                    timeDiff = examDateTime - now;
                     document.getElementById('countdown-title').textContent = "الوقت المتبقي لبدء الاختبار";
                     document.querySelector('.exam-card').classList.remove('exam-in-progress');
                 }
                 
-                const hours = Math.floor(timeDiff / (1000 * 60 * 60));
-                const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-                
-                document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '٠');
-                document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '٠');
-                document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '٠');
-                
-                if (hours < 1) {
-                    document.getElementById('countdown-title').classList.add('urgent');
+                if (timeDiff > 0) {
+                    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+                    
+                    document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+                    document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+                    document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+                    document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+                    
+                    if (days === 0 && hours < 24) {
+                        document.getElementById('countdown-title').classList.add('urgent');
+                    } else {
+                        document.getElementById('countdown-title').classList.remove('urgent');
+                    }
                 } else {
-                    document.getElementById('countdown-title').classList.remove('urgent');
+                    // إذا انتهى الوقت، تحديث العرض
+                    document.querySelectorAll('.grade-btn').forEach(btn => btn.click());
                 }
             } else {
                 document.querySelector('.exam-card').innerHTML = `
@@ -774,6 +790,7 @@
             }
         }
         
+        // تبديل الصفوف
         document.querySelectorAll('.grade-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.grade-btn').forEach(b => b.classList.remove('active'));
@@ -782,6 +799,7 @@
             });
         });
         
+        // التهيئة الأولية
         updateDateTime();
         updateCountdown();
         setInterval(updateDateTime, 1000);
