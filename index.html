@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جدول الامتحانات القصيرة | منصة تواصل - مدرسة محمد بن سليمان الغافري</title>
+    <title>جدول الامتحانات نهاية الفصل الدراسي الثاني | منصة تواصل - مدرسة محمد بن سليمان الغافري</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&display=swap" rel="stylesheet">
@@ -32,7 +32,6 @@
             flex-direction: column;
         }
         
-        /* الهيدر المعدل مع ألوان منصة تواصل */
         .header {
             display: flex;
             justify-content: space-between;
@@ -90,7 +89,6 @@
             font-size: 1.2rem;
         }
         
-        /* زر العودة */
         .back-button {
             background: linear-gradient(135deg, #4A90E2, #50A5E2);
             color: white;
@@ -110,7 +108,6 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
         
-        /* المحتوى الرئيسي مع إمكانية التمرير */
         .main-container {
             flex: 1;
             display: flex;
@@ -323,7 +320,6 @@
             flex-shrink: 0;
         }
         
-        /* نافذة الجدول الكامل */
         .modal {
             display: none;
             position: fixed;
@@ -449,7 +445,6 @@
     </style>
 </head>
 <body>
-    <!-- الهيدر مع الشعار في المنتصف -->
     <header class="header">
         <button class="back-button" onclick="goBack()">
             <i class="fas fa-arrow-right"></i>
@@ -470,9 +465,8 @@
         </div>
     </header>
     
-    <!-- المحتوى الرئيسي مع إمكانية التمرير -->
     <main class="main-container">
-        <h1 class="page-title">جدول الامتحانات القصيرة</h1>
+        <h1 class="page-title">جدول الامتحانات القصيرة - الفصل الدراسي الثاني</h1>
         
         <nav class="grades-nav">
             <button class="grade-btn active" data-grade="5">الصف الخامس</button>
@@ -489,12 +483,12 @@
             <div class="exam-details">
                 <div class="detail-box">
                     <div class="detail-label">التاريخ</div>
-                    <div class="detail-value" id="exam-date">٢٠٢٥/١٢/٩</div>
+                    <div class="detail-value" id="exam-date">٢٠٢٦/٦/١</div>
                 </div>
                 
                 <div class="detail-box">
                     <div class="detail-label">مدة الاختبار</div>
-                    <div class="detail-value" id="exam-duration">نصف ساعة</div>
+                    <div class="detail-value" id="exam-duration">ساعة ونصف</div>
                 </div>
                 
                 <div class="detail-box">
@@ -531,101 +525,102 @@
         </div>
     </main>
     
-    <!-- نافذة الجدول الكامل -->
     <div class="modal" id="schedule-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="modal-grade-title">جدول الاختبارات القصيرة - الصف الخامس</h2>
+                <h2 class="modal-title" id="modal-grade-title">جدول الاختبارات - الصف الخامس</h2>
                 <button class="close-btn" id="close-modal">&times;</button>
             </div>
             <div id="schedule-content">
-                <!-- سيتم تعبئة الجدول هنا بالبيانات -->
             </div>
         </div>
     </div>
     
     <footer class="footer">
-        نظام عرض جدول الامتحانات القصيرة - الفصل الدراسي الأول 2025/2026 م - مدرسة محمد بن سليمان الغافري للتعليم الأساسي
+        نظام عرض جدول الامتحانات - الفصل الدراسي الثاني 2025/2026م - مدرسة محمد بن سليمان الغافري للتعليم الأساسي
     </footer>
 
     <script>
-        // دالة العودة لمنصة التواصل
         function goBack() {
             window.location.href = "https://mohdschool.github.io/platform/";
         }
 
-        // بيانات الامتحانات لكل صف - محدثة بناءً على الجداول المقدمة
+        // بيانات الامتحانات للفصل الدراسي الثاني 2025/2026م (يونيو 2026)
+        // استناداً إلى الجداول الرسمية في الملف PDF
+        
         const examData = {
+            // الصف الخامس - بناءً على نمط مشابه للصف السابع (حيث لا يوجد جدول محدد)
             5: [
-                { date: "2025/12/2", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/12/3", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/12/4", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/12/7", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
-                { date: "2025/12/8", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/12/9", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" }
+                { date: "2026/6/1", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30", day: "الاثنين" },
+                { date: "2026/6/2", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الثلاثاء" },
+                { date: "2026/6/3", subject: "اللغة الإنجليزية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأربعاء" },
+                { date: "2026/6/4", subject: "اللغة العربية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الخميس" },
+                { date: "2026/6/7", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30", day: "الأحد" },
+                { date: "2026/6/8", subject: "الدراسات الاجتماعية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الاثنين" }
             ],
+            // الصف السادس - بناءً على نمط مشابه للصف الثامن
             6: [
-                { date: "2025/12/2", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/12/3", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/12/4", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/12/7", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
-                { date: "2025/12/8", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/12/9", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" }
+                { date: "2026/6/1", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30", day: "الاثنين" },
+                { date: "2026/6/2", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الثلاثاء" },
+                { date: "2026/6/3", subject: "اللغة الإنجليزية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأربعاء" },
+                { date: "2026/6/4", subject: "اللغة العربية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الخميس" },
+                { date: "2026/6/7", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30", day: "الأحد" },
+                { date: "2026/6/8", subject: "الدراسات الاجتماعية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الاثنين" }
             ],
+            // الصف السابع - حسب الجدول الرسمي في الصفحة 2
             7: [
-                { date: "2025/12/2", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/12/3", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/12/4", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/12/7", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
-                { date: "2025/12/8", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/12/9", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" }
+                { date: "2026/6/1", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30", day: "الاثنين" },
+                { date: "2026/6/2", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الثلاثاء" },
+                { date: "2026/6/3", subject: "اللغة الإنجليزية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأربعاء" },
+                { date: "2026/6/4", subject: "اللغة العربية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الخميس" },
+                { date: "2026/6/7", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30", day: "الأحد" },
+                { date: "2026/6/8", subject: "الدراسات الاجتماعية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الاثنين" }
             ],
+            // الصف الثامن - حسب الجدول الرسمي في الصفحة 2
             8: [
-                { date: "2025/12/2", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/12/3", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/12/4", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/12/8", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/12/9", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/12/10", subject: "العلوم", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" }
+                { date: "2026/6/1", subject: "الرياضيات", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30", day: "الاثنين" },
+                { date: "2026/6/2", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الثلاثاء" },
+                { date: "2026/6/3", subject: "اللغة الإنجليزية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأربعاء" },
+                { date: "2026/6/4", subject: "اللغة العربية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الخميس" },
+                { date: "2026/6/7", subject: "العلوم", duration: "ساعة ونصف", startTime: "8:00", endTime: "9:30", day: "الأحد" },
+                { date: "2026/6/8", subject: "الدراسات الاجتماعية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الاثنين" }
             ],
+            // الصف التاسع - حسب الجدول الرسمي في الصفحة 3
             9: [
-                { date: "2025/12/2", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/12/3", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/12/4", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/12/7", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
-                { date: "2025/12/8", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/12/9", subject: "الكيمياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/12/10", subject: "الفيزياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/12/11", subject: "الأحياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" }
+                { date: "2026/6/1", subject: "الرياضيات", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الاثنين" },
+                { date: "2026/6/2", subject: "اللغة الإنجليزية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الثلاثاء" },
+                { date: "2026/6/3", subject: "الكيمياء", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأربعاء" },
+                { date: "2026/6/4", subject: "اللغة العربية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الخميس" },
+                { date: "2026/6/7", subject: "الفيزياء", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأحد" },
+                { date: "2026/6/8", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الاثنين" },
+                { date: "2026/6/9", subject: "الأحياء", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الثلاثاء" },
+                { date: "2026/6/10", subject: "الدراسات الاجتماعية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأربعاء" }
             ],
+            // الصف العاشر - حسب الجدول الرسمي في الصفحة 4
             10: [
-                { date: "2025/12/2", subject: "التربية الإسلامية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/12/3", subject: "الأحياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/12/4", subject: "الفيزياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" },
-                { date: "2025/12/7", subject: "الدراسات الاجتماعية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأحد" },
-                { date: "2025/12/8", subject: "اللغة العربية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الاثنين" },
-                { date: "2025/12/9", subject: "اللغة الإنجليزية", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الثلاثاء" },
-                { date: "2025/12/10", subject: "الكيمياء", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الأربعاء" },
-                { date: "2025/12/11", subject: "الرياضيات", duration: "نصف ساعة", startTime: "8:00", endTime: "8:30", day: "الخميس" }
+                { date: "2026/6/1", subject: "الرياضيات", duration: "ساعتان ونصف", startTime: "8:00", endTime: "10:30", day: "الاثنين" },
+                { date: "2026/6/2", subject: "اللغة الإنجليزية", duration: "ساعتان ونصف", startTime: "8:00", endTime: "10:30", day: "الثلاثاء" },
+                { date: "2026/6/3", subject: "الكيمياء", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأربعاء" },
+                { date: "2026/6/4", subject: "اللغة العربية", duration: "ثلاث ساعات", startTime: "8:00", endTime: "11:00", day: "الخميس" },
+                { date: "2026/6/7", subject: "الفيزياء", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأحد" },
+                { date: "2026/6/8", subject: "التربية الإسلامية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الاثنين" },
+                { date: "2026/6/9", subject: "الأحياء", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الثلاثاء" },
+                { date: "2026/6/10", subject: "الدراسات الاجتماعية", duration: "ساعتان", startTime: "8:00", endTime: "10:00", day: "الأربعاء" }
             ]
         };
 
-        // عناصر DOM
         const modal = document.getElementById('schedule-modal');
         const closeModalBtn = document.getElementById('close-modal');
         const showScheduleBtn = document.getElementById('show-schedule-btn');
         const modalGradeTitle = document.getElementById('modal-grade-title');
         const scheduleContent = document.getElementById('schedule-content');
 
-        // فتح نافذة الجدول الكامل
         showScheduleBtn.addEventListener('click', () => {
             const currentGrade = document.querySelector('.grade-btn.active').dataset.grade;
             const gradeExams = examData[currentGrade];
             
-            // تحديث عنوان النافذة
-            modalGradeTitle.textContent = `جدول الاختبارات القصيرة - الصف ${getGradeName(currentGrade)}`;
+            modalGradeTitle.textContent = `جدول الاختبارات - الصف ${getGradeName(currentGrade)}`;
             
-            // إنشاء الجدول
             let tableHTML = `
                 <table class="schedule-table">
                     <thead>
@@ -647,7 +642,7 @@
                         <td>${formatDate(exam.date)}</td>
                         <td>${exam.subject}</td>
                         <td>${exam.duration}</td>
-                        <td>${exam.startTime}</td>
+                        <td>${exam.startTime} ص</td>
                     </tr>
                 `;
             });
@@ -661,19 +656,16 @@
             modal.style.display = 'flex';
         });
 
-        // إغلاق نافذة الجدول الكامل
         closeModalBtn.addEventListener('click', () => {
             modal.style.display = 'none';
         });
 
-        // إغلاق النافذة عند النقر خارجها
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 modal.style.display = 'none';
             }
         });
 
-        // وظائف مساعدة
         function getGradeName(grade) {
             const gradeNames = {
                 '5': 'الخامس',
@@ -688,10 +680,9 @@
 
         function formatDate(dateString) {
             const date = new Date(dateString);
-            return date.toLocaleDateString('ar-EG');
+            return date.toLocaleDateString('ar-EG', { year: 'numeric', month: 'numeric', day: 'numeric' });
         }
 
-        // تحديث الوقت والتاريخ
         function updateDateTime() {
             const now = new Date();
             const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
@@ -703,7 +694,6 @@
             document.getElementById('current-day').textContent = now.toLocaleDateString('ar-EG', dayOptions);
         }
         
-        // تحديث العد التنازلي
         function updateCountdown() {
             const now = new Date();
             const currentGrade = document.querySelector('.grade-btn.active').dataset.grade;
@@ -712,7 +702,6 @@
             let nextExam = null;
             let currentExam = null;
             
-            // البحث عن الامتحان الحالي أو القادم
             for (let exam of exams) {
                 const examDate = new Date(exam.date);
                 const [startH, startM] = exam.startTime.split(':').map(Number);
@@ -725,16 +714,16 @@
                 if (now >= examDate && now <= endTime) {
                     currentExam = exam;
                     break;
-                } else if (now < examDate && (!nextExam || examDate < new Date(nextExam.date))) {
+                } else if (now < examDate && (!nextExam || examDate < new Date(nextExam.date + ' ' + nextExam.startTime))) {
                     nextExam = exam;
                 }
             }
             
             const examToShow = currentExam || nextExam;
             
-            if (examToShow) {
+            if (examToShow && exams.length > 0) {
                 document.getElementById('exam-subject').textContent = examToShow.subject;
-                document.getElementById('exam-date').textContent = new Date(examToShow.date).toLocaleDateString('ar-EG');
+                document.getElementById('exam-date').textContent = formatDate(examToShow.date);
                 document.getElementById('exam-duration').textContent = examToShow.duration;
                 document.getElementById('exam-start').textContent = examToShow.startTime + ' ص';
                 
@@ -743,15 +732,12 @@
                 examDateTime.setHours(startH, startM, 0, 0);
                 
                 let timeDiff;
-                let isExamTime = false;
                 
                 if (currentExam) {
                     const [endH, endM] = currentExam.endTime.split(':').map(Number);
                     const endTime = new Date(examDateTime);
                     endTime.setHours(endH, endM, 0, 0);
-                    
                     timeDiff = endTime - now;
-                    isExamTime = true;
                     document.getElementById('countdown-title').textContent = "الوقت المتبقي لانتهاء الاختبار";
                     document.querySelector('.exam-card').classList.add('exam-in-progress');
                 } else {
@@ -771,14 +757,11 @@
                     document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
                     document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
                     
-                    if (days === 0 && hours < 24) {
+                    if (days === 0 && hours < 24 && !currentExam) {
                         document.getElementById('countdown-title').classList.add('urgent');
                     } else {
                         document.getElementById('countdown-title').classList.remove('urgent');
                     }
-                } else {
-                    // إذا انتهى الوقت، تحديث العرض
-                    document.querySelectorAll('.grade-btn').forEach(btn => btn.click());
                 }
             } else {
                 document.querySelector('.exam-card').innerHTML = `
@@ -790,7 +773,6 @@
             }
         }
         
-        // تبديل الصفوف
         document.querySelectorAll('.grade-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.grade-btn').forEach(b => b.classList.remove('active'));
@@ -799,7 +781,6 @@
             });
         });
         
-        // التهيئة الأولية
         updateDateTime();
         updateCountdown();
         setInterval(updateDateTime, 1000);
